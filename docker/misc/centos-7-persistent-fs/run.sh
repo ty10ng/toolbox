@@ -60,7 +60,7 @@ echo "Launching interactive bash shell within $DOCKER_IMAGE:$DOCKER_TAG ... "
 echo "Data (should) be persistent across runs of this script ..."
 echo -e "\nNOTE: Type 'exit' to drop back to your main shell at any time.\n"
 
-docker run -it \
+docker run -it --rm \
         -v "$SCRIPT_DIR/fs/home:/home" \
         -v "$SCRIPT_DIR/fs/etc:/etc" \
         -v "$SCRIPT_DIR/fs/root:/root" \
