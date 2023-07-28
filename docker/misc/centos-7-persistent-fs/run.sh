@@ -32,15 +32,15 @@ if [ -d "./fs" ]; then
     echo -e "\nThe persistent 'fs' directory already exists."
 else
     # Pull the Docker image
-    docker pull centos:7
+    docker pull $DOCKER_IMAGE:$DOCKER_TAG
 
     # Save the Docker image to a tar file
     mkdir -pv ./temp/
     cd temp
-    docker save centos:7 > centos7.tar
+    docker save $DOCKER_IMAGE:$DOCKER_TAG > $DOCKER_IMAGE.$DOCKER_TAG.tar
 
     # Extract the tar file to a temporary directory
-    tar -xf centos7.tar -C .
+    tar -xf $DOCKER_IMAGE.$DOCKER_TAG.tar -C .
 
     # Create 'fs' directory
     mkdir -pv ../fs
