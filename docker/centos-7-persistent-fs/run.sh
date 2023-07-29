@@ -73,4 +73,4 @@ docker run -it --rm \
         -v "$SCRIPT_DIR/fs/media:/media" \
         -v "$SCRIPT_DIR/fs/srv:/srv" \
         $DOCKER_IMAGE:$DOCKER_TAG \
-        bash
+        /bin/bash
