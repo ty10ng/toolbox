@@ -1,8 +1,8 @@
-# Interactive Shell within 'Persistent' CentOS 7 Docker Container
+# Interactive Shell within data 'Persistent' CentOS 7 Docker Container
 
-This script provides an interactive shell within a file-persistent CentOS 7 Docker container. The persistent data is stored in a local `fs` directory, which is populated with the necessary file system structure using a Docker image for CentOS 7. If the `fs` directory already exists, the script just uses it. Various directories from `fs` are then mounted to the corresponding paths within the container. This allows the container to retain its state across multiple runs, making it "persistent".
+This script provides an interactive shell within a CentOS 7 Docker container. The persistent data is stored in a local `fs` directory, with all the important Linux subdirectories being populated by extracting data from the Docker image for CentOS 7. If the `fs` directory already exists, the script will skip the extraction step. Various directories from `fs` are then mounted to the corresponding paths within the container. This allows the container to retain its data across multiple runs, making it loosely "persistent".
 
-Please note, this only works if the docker image has one `layer.tar` when creating the `fs` directory. Currently, CentOS 7 does, so this works!
+Please note, this only works if the docker image has one `layer.tar` when creating the `fs` directory. Currently, CentOS 7 does, so this works! (for now...)
 
 > :warning: FOR NON PRODUCTION USE!! USE AT YOUR OWN RISK!!
 
